@@ -57,12 +57,12 @@ header div {
     height: 455px;
 }
   
-#img-card {
+.img-card {
     width: 409px;
     height: 273px;
 }
   
-#title-card {
+.title-card {
     font-size: 20px;
     font-family: Inter;
     font-weight: 500;
@@ -91,7 +91,7 @@ p.description {
     margin-top: 40px;
 }
 
-#block-card {
+.block-card {
     border: 1px solid #FFFFFF;
     position: relative;
     z-index: 1; /* Valor maior para colocar a descrição na frente */
@@ -99,7 +99,7 @@ p.description {
     border-radius: 8px;
 }
 
-#block-card div {
+.block-card div {
     padding: 14px;
 }
 
@@ -112,4 +112,10 @@ p.description {
     line-height: 20px;
     color: #3A4F9A;
     margin-left: 80%;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+   cursor: default; 
 }
