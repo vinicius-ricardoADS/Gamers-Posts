@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+header {
+    height: 59px;
+    background-color: #32325D;
+    padding: 15px, 79px, 15px, 79px;
+}
+
+#title {
+    width: 66px;
+    height: 29px;
+    color: #FFFFFF;
+    font-family: Inter;
+}
+
+.flex {
+    display: flex;
+}
+
+img {
+    width: 28px;
+    height: 28px;
+}
