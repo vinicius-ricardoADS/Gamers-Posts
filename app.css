@@ -7,6 +7,10 @@ header {
     background-color: #32325D;
     padding: 15px, 79px, 15px, 79px;
     padding-left: 70px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 999;
 }
 
 #brand {
@@ -118,4 +122,20 @@ a {
    text-decoration: none;
    color: inherit;
    cursor: default; 
+}
+
+/* responsive */
+@media(max-width: 450px) {
+    .progress-bar {
+        display: block;
+    }
+
+    header {
+        position: relative;
+        width: auto;
+    }
+
+    main {
+        padding: 8px;
+    }
 }
