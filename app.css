@@ -73,13 +73,16 @@ p.description {
   font-size: 13px;
   font-family: Inter;
   font-weight: 300;
-  display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limite de 3 linhas */
-  -webkit-box-orient: vertical;
-  line-height: 20px;
-  overflow: hidden;
   color: #575757;
   margin-top: 7px;
+}
+
+.expand {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limite de 3 linhas */
+    -webkit-box-orient: vertical;
+    line-height: 20px;
+    overflow: hidden;
 }
 
 .progress-bar {
@@ -90,6 +93,10 @@ p.description {
 
 #block-card {
     border: 1px solid #FFFFFF;
+    position: relative;
+    z-index: 1; /* Valor maior para colocar a descrição na frente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 #block-card div {
