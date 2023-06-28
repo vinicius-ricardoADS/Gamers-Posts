@@ -114,11 +114,11 @@ class ProjectState {
         'development, and brutal yet satisfying combat, it s shaping up to be a must-play game for fans of the franchise.');
         const comment3_godOfWar = new CardComment(15, 5, 'logan.wilson@example.com', 'God of War Ragnarok has generated a lot of anticipation, and for good reason. The previous game set a high standard, and this ' +
         'upcoming installment is expected to deliver another unforgettable adventure with its blend of mythology, emotional storytelling, and visceral gameplay.');
-        const comment1_lol = new CardComment(16, 6, 'mia.johnson@example.com', 'League of Legends is a highly competitive and strategic multiplayer online battle arena (MOBA) game that offers a vast roster of ' +
+        const comment1_lol = new CardComment(16, 6, 'ethan.thompson@example.com', 'League of Legends is a highly competitive and strategic multiplayer online battle arena (MOBA) game that offers a vast roster of ' +
         'diverse champions, intense team-based gameplay, and a thriving esports scene.');
-        const comment2_lol = new CardComment(17, 6, 'lucas.jackson@example.com', 'The depth and complexity of League of Legends make it a game that keeps players coming back for more. With its ever-evolving meta, ' +
+        const comment2_lol = new CardComment(17, 6, 'isabella.martin@example.com', 'The depth and complexity of League of Legends make it a game that keeps players coming back for more. With its ever-evolving meta, ' +
         'constant updates, and the need for strong teamwork and communication, it provides a challenging and rewarding experience.');
-        const comment3_lol = new CardComment(18, 6, 'harper.davis@example.com', 'League of Legends has a passionate and dedicated community that spans the globe. The game s emphasis on teamwork, coordination, and ' +
+        const comment3_lol = new CardComment(18, 6, 'logan.wilson@example.com', 'League of Legends has a passionate and dedicated community that spans the globe. The game s emphasis on teamwork, coordination, and ' +
         'skillful execution makes each match a unique and exciting experience, fostering both friendly competition and lasting friendships.');
         return [
             comment1_valorant, comment2_valorant, comment3_valorant,
@@ -143,24 +143,26 @@ class ProjectState {
     private renderContentDetail() {
         const url = new URL(window.location.href);
         const id = url.hash.substring(1);
-        let card = {};
+        let comment = {};
         for (const key in this.cards) {
             if (this.cards[key].id === +id) {
                 this.imageCardsDetails.src = this.cards[key].imageUrl;
                 this.titleCardsDetails.textContent = this.cards[key].title;
                 this.descriptionCardsDetails.textContent = this.cards[key].body;
-                card = this.cards[key];
             }
+            if (this.cards[key].id === this.comments[key].postId)
+                comment = this.comments[key];
         }
+        
+        let indexComment = 0;
 
-        for (let key in this.comments) {
+        for (const key in this.comments) {
             if (this.comments[key].postId === +id) {
                 console.log(this.comments[key]);
-                for (let index = 0; index < 3; index++) {
-                    this.userCardsDetails[index].textContent = this.comments[+key + index].email.split(".")[0]  + ': ';
-                    this.userEmailCardsDetails[index].textContent = this.comments[+key + index].email + ': ';
-                    this.paragraphCardsDetails[index].textContent = this.comments[+key + index].body;
-                }
+                this.userCardsDetails[indexComment].textContent = this.comments[key].email.split(".")[0] + ': ';
+                this.userEmailCardsDetails[indexComment].textContent = this.comments[key].email + ': ';
+                this.paragraphCardsDetails[indexComment].textContent = this.comments[key].body;
+                indexComment++;
             }
         }
     }
