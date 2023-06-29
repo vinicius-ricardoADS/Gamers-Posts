@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap');
+
 * {
     margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3A4F9A4D;
+    border-radius: 4px;
 }
 
 body {
@@ -25,7 +37,7 @@ div h1 {
     width: 66px;
     height: 29px;
     color: #FFFFFF;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 600;
 }
 
@@ -72,14 +84,14 @@ header div {
   
 .title-card {
     font-size: 20px;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 500;
     color: #3A4F9A;
 }
   
 p.description {
   font-size: 13px;
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: 300;
   color: #575757;
   margin-top: 7px;
@@ -87,7 +99,7 @@ p.description {
 
 .expand {
     display: -webkit-box;
-    -webkit-line-clamp: 5; /* Limite de 3 linhas */
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     line-height: 20px;
     overflow: hidden;
@@ -162,7 +174,7 @@ a {
 }
 
 .title-card-detail {
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
@@ -178,7 +190,7 @@ p.description-detail {
     height: 124.33px;
     margin-left: 54.67px;
     margin-top: 15px;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 300;
     font-size: 13px;
     line-height: 20px;
@@ -198,7 +210,7 @@ p.description-detail {
 
 .user {
     color: #3A4F9A;
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
@@ -208,7 +220,7 @@ p.description-detail {
 
 .user-email {
     color: #3A4F9A;
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
@@ -227,7 +239,7 @@ p.description-detail {
 }
 
 .paragraph-detail {
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 16px;
     font-style: italic;
     font-weight: 200;
@@ -242,6 +254,10 @@ p.description-detail {
 
 .comment {
     max-width: 652.01px;
+}
+
+.progress-bar section {
+    margin-top: 15px;
 }
 
 /* responsive */
