@@ -39,10 +39,8 @@ class ProjectState {
         this.comments = this.buildingComments();
         if (window.location.href === 'http://localhost:5500/') 
             this.addPosts();
-        else {
+        else
             this.renderContentDetail();
-            this.renderContentComments();
-        }
     }
 
     private buildingPosts() {
@@ -130,32 +128,24 @@ class ProjectState {
     private renderContentDetail() {
         const url = new URL(window.location.href);
         const id = url.hash.substring(1);
-        let comment = {};
-        for (const key in this.cards) {
-            if (this.cards[key].id === +id) {
-                this.imageCardsDetails.src = this.cards[key].imageUrl;
-                this.titleCardsDetails.textContent = this.cards[key].title;
-                this.descriptionCardsDetails.textContent = this.cards[key].body;
+        this.cards.forEach((card) => {
+            if (card.id === +id) {
+                this.imageCardsDetails.src = card.imageUrl;
+                this.titleCardsDetails.textContent = card.title;
+                this.descriptionCardsDetails.textContent = card.body;
             }
-            if (this.cards[key].id === this.comments[key].postId)
-                comment = this.comments[key];
-        }
+        })
         
         let indexComment = 0;
 
-        for (const key in this.comments) {
-            if (this.comments[key].postId === +id) {
-                console.log(this.comments[key]);
-                this.userCardsDetails[indexComment].textContent = this.comments[key].email.split(".")[0] + ': ';
-                this.userEmailCardsDetails[indexComment].textContent = this.comments[key].email + ': ';
-                this.paragraphCardsDetails[indexComment].textContent = this.comments[key].body;
+        this.comments.forEach((comment) => {
+            if (comment.postId === +id) {
+                this.userCardsDetails[indexComment].textContent = comment.email.split(".")[0] + ': ';
+                this.userEmailCardsDetails[indexComment].textContent = comment.email + ': ';
+                this.paragraphCardsDetails[indexComment].textContent = comment.body;
                 indexComment++;
             }
-        }
-    }
-
-    private renderContentComments() {
-
+        })
     }
 }
 

@@ -33,10 +33,8 @@ class ProjectState {
         this.comments = this.buildingComments();
         if (window.location.href === 'http://localhost:5500/')
             this.addPosts();
-        else {
+        else
             this.renderContentDetail();
-            this.renderContentComments();
-        }
     }
     buildingPosts() {
         const card1 = new Card(1, 'Valorant', 'https://a.espncdn.com/photo/2020/0601/r704230_3_1296x729_16-9.png', 'Valorant is a free-to- play multiplayer first-person shooter video game developed and published by Riot Games . It is the first game of its kind developed by the company, being first announced under the codename Project A in October 2019, at an event celebrating 10 years of League of Legends.' +
@@ -111,28 +109,22 @@ class ProjectState {
     renderContentDetail() {
         const url = new URL(window.location.href);
         const id = url.hash.substring(1);
-        let comment = {};
-        for (const key in this.cards) {
-            if (this.cards[key].id === +id) {
-                this.imageCardsDetails.src = this.cards[key].imageUrl;
-                this.titleCardsDetails.textContent = this.cards[key].title;
-                this.descriptionCardsDetails.textContent = this.cards[key].body;
+        this.cards.forEach((card) => {
+            if (card.id === +id) {
+                this.imageCardsDetails.src = card.imageUrl;
+                this.titleCardsDetails.textContent = card.title;
+                this.descriptionCardsDetails.textContent = card.body;
             }
-            if (this.cards[key].id === this.comments[key].postId)
-                comment = this.comments[key];
-        }
+        });
         let indexComment = 0;
-        for (const key in this.comments) {
-            if (this.comments[key].postId === +id) {
-                console.log(this.comments[key]);
-                this.userCardsDetails[indexComment].textContent = this.comments[key].email.split(".")[0] + ': ';
-                this.userEmailCardsDetails[indexComment].textContent = this.comments[key].email + ': ';
-                this.paragraphCardsDetails[indexComment].textContent = this.comments[key].body;
+        this.comments.forEach((comment) => {
+            if (comment.postId === +id) {
+                this.userCardsDetails[indexComment].textContent = comment.email.split(".")[0] + ': ';
+                this.userEmailCardsDetails[indexComment].textContent = comment.email + ': ';
+                this.paragraphCardsDetails[indexComment].textContent = comment.body;
                 indexComment++;
             }
-        }
-    }
-    renderContentComments() {
+        });
     }
 }
 const p = new ProjectState();
