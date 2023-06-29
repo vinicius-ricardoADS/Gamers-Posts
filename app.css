@@ -68,7 +68,7 @@ header div {
 
 .title-position div {
     border-bottom: 3px solid #3A4F9A;
-    margin-right: 88%;
+    margin-right: 87%;
 }
 
 .card {
@@ -208,17 +208,7 @@ p.description-detail {
     margin-top: 13px;
 }
 
-.user {
-    color: #3A4F9A;
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 0.1em;
-    text-align: left;
-}
-
-.user-email {
+.user, .user-email {
     color: #3A4F9A;
     font-family: 'Inter';
     font-size: 16px;
@@ -256,8 +246,8 @@ p.description-detail {
     max-width: 652.01px;
 }
 
-.progress-bar section {
-    margin-top: 15px;
+.top-60 {
+    margin-top: 60px;
 }
 
 /* responsive */
