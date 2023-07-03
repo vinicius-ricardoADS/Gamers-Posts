@@ -21,10 +21,10 @@ class CardComment implements CardComments {
 }
 
 class ProjectState {
-    anchorCards = document.querySelectorAll('a')! as NodeListOf<HTMLAnchorElement>;
-    imageCards = document.querySelectorAll('.img-card')! as NodeListOf<HTMLImageElement>;
-    titleCards = document.querySelectorAll('.title-card')! as NodeListOf<HTMLElement>;
-    descriptionCards = document.querySelectorAll('.description')! as NodeListOf<HTMLParagraphElement>;
+    anchorCards = document.querySelectorAll('.anchorPost') as NodeListOf<HTMLAnchorElement>;
+    imageCards = document.querySelectorAll('.img-card') as NodeListOf<HTMLImageElement>;
+    titleCards = document.querySelectorAll('.title-card') as NodeListOf<HTMLElement>;
+    descriptionCards = document.querySelectorAll('.description') as NodeListOf<HTMLParagraphElement>;
     imageCardsDetails = document.querySelector('.img-card-detail')! as HTMLImageElement;
     titleCardsDetails = document.querySelector('.title-card-detail')! as HTMLElement;
     descriptionCardsDetails = document.querySelector('.description-detail')! as HTMLParagraphElement;
@@ -37,10 +37,10 @@ class ProjectState {
     constructor() {
         this.cards = this.buildingPosts();
         this.comments = this.buildingComments();
-        if (window.location.href === 'http://localhost:5500/') 
+        console.log(this.anchorCards.length);
+        if (this.anchorCards.length > 0)
             this.addPosts();
-        else
-            this.renderContentDetail();
+        this.renderContentDetail();
     }
 
     private buildingPosts() {

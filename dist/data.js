@@ -17,7 +17,7 @@ class CardComment {
 }
 class ProjectState {
     constructor() {
-        this.anchorCards = document.querySelectorAll('a');
+        this.anchorCards = document.querySelectorAll('.anchorPost');
         this.imageCards = document.querySelectorAll('.img-card');
         this.titleCards = document.querySelectorAll('.title-card');
         this.descriptionCards = document.querySelectorAll('.description');
@@ -31,10 +31,10 @@ class ProjectState {
         this.comments = [];
         this.cards = this.buildingPosts();
         this.comments = this.buildingComments();
-        if (window.location.href === 'http://localhost:5500/')
+        console.log(this.anchorCards.length);
+        if (this.anchorCards.length > 0)
             this.addPosts();
-        else
-            this.renderContentDetail();
+        this.renderContentDetail();
     }
     buildingPosts() {
         const card1 = new Card(1, 'Valorant', 'assets/valorant.png', 'Valorant is a free-to- play multiplayer first-person shooter video game developed and published by Riot Games . It is the first game of its kind developed by the company, being first announced under the codename Project A in October 2019, at an event celebrating 10 years of League of Legends.' +
