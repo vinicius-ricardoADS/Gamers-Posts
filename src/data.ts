@@ -37,7 +37,6 @@ class ProjectState {
     constructor() {
         this.cards = this.buildingPosts();
         this.comments = this.buildingComments();
-        console.log(this.anchorCards.length);
         if (this.anchorCards.length > 0)
             this.addPosts();
         this.renderContentDetail();
